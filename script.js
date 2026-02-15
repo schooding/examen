@@ -60,7 +60,13 @@
     // === 4. LOGIQUES DE COULEUR (SOURCES OFFICIELLES) ===
     
     // Fonction quadratique extraite de progressbar_autocolor.js [cite: 1, 2, 3]
-    
+    function hsl_col_perc(percent, start, end, s, l) {
+        if (percent > 100) percent = 100;
+        let a = percent / 100,
+            b = (end - start) * a * a, // Courbe Schooding 
+            c = b + start;
+        return `hsl(${c}, ${s}%, ${l}%)`;
+    }
 
     function render() {
         const now = Date.now();
@@ -81,14 +87,7 @@
         }
 
         // B. Couleur du Chrono (Vert -> Rouge selon progression) [cite: 1]
-        if (countdownElement) {
-            countdownElement.style.color = hsl_col_perc(percent, 0, 134, 80, 50);
-            
-            let hours = Math.floor(remaining / 3600);
-            let mins = Math.floor((remaining % 3600) / 60);
-            let secs = remaining % 60;
-            countdownElement.innerText = `${hours}h ${mins.toString().padStart(2, '0')}m ${secs.toString().padStart(2, '0')}s`;
-        }
+       
 
         if (diff > 0) {
             requestAnimationFrame(render);
@@ -101,4 +100,3 @@
 
     render();
 })();
-
