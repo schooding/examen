@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Système : I/O, ligne de commande, script</title>
+        <link rel="shortcut icon" href="https://schooding-media.ams3.digitaloceanspaces.com/static/images/logo.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/schooding.css?v=1.20">
+        <script>
+            var lang = "fr";
+            console.log = function() {}
+            setInterval(function() {
+                $(".modal-backdrop").addClass("removable");
+            }, 1000);
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
+        <script type="text/javascript" src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/vendor/bootstrap-notify.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript">
+            var skipVisit = true;
+            var userId = 19023;
+            var csrfToken = "4hbpuKNNb49EiXyTP76IKt7BVYW8qUIoeSQeNS3mBOyCP1QX0nl87W0pHwjjrHsS";
+        </script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/lang.js?v=1.14"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/storage.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/common.tools.js?v=1.45"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/sidebars.js?v=1.4"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/exercice.tools.js?v=2.06"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/chat.js?v=1.2"></script>
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/chat.css?v=1.153">
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/activity.js?v=1.35"></script>
+        <style>
+            .checkbox.checked { background-color: #e1f8f9; }
+            .question-wording { overflow: auto; }
+        </style>
+    </head>
+    <body class="full headless">
+        <div id="mainContainer" class="main schoodiv fitToBottom">
+            <div class="page-header">
+                <h1>Système : I/O, ligne de commande, script</h1>
+            </div>
+            <div>
+                <form action="/qcm/validate/" method="post" id="form" class="wording">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="4hbpuKNNb49EiXyTP76IKt7BVYW8qUIoeSQeNS3mBOyCP1QX0nl87W0pHwjjrHsS">
+                    <input type="hidden" name="qcm" value="5745">
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1353">
+                            <div class="card-header bg-info text-white">Question #1</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quels symboles redirigent la sortie ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5376"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&lt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5377"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&lt;&lt;&lt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5374"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&gt;&gt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5375"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&gt;</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1354">
+                            <div class="card-header bg-info text-white">Question #2</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quels opérateurs conditionnent l’exécution ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5381"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>:</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5378"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&amp;&amp;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5380"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>||</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5379"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>::</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1355">
+                            <div class="card-header bg-info text-white">Question #3</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quels symboles indiquent une redirection d’entrée ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5385"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&lt;&lt;&lt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5384"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&lt;&lt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5382"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&lt;</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5383"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>&gt;</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1356">
+                            <div class="card-header bg-info text-white">Question #4</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Comment exécuter une commande dans une autre ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5387"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>$(cmd)</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5389"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>%cmd</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5386"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>`cmd`</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5388"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>@cmd</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1357">
+                            <div class="card-header bg-info text-white">Question #5</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Le pipe | sert à :</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5393"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Copier un répertoire</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5392"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Exécuter un script</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5390"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Envoyer la sortie d’une commande vers une autre</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5391"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Archiver un fichier</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1358">
+                            <div class="card-header bg-info text-white">Question #6</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quels outils sont des filtres ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5397"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>sudo</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5395"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>sort</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5396"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>nano</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5394"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>grep</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1359">
+                            <div class="card-header bg-info text-white">Question #7</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Comment rendre un script script.sh exécutable ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5398"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 766 script.sh</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5400"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>run script.sh</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5401"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 755 script.sh</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5399"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod +x script.sh</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1360">
+                            <div class="card-header bg-info text-white">Question #8</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Où le shell cherche‑t‑il les commandes ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5403"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>$HOME/bin</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5402"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/root</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5405"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/lost+found</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5404"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>$PATH</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1361">
+                            <div class="card-header bg-info text-white">Question #9</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <h3>Comment afficher le code retour ?</h3></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5409"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>getcode</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5407"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>$?</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5408"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>returncode</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5406"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>echo $?</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1362">
+                            <div class="card-header bg-info text-white">Question #10</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Que fait cmd1 ; cmd2 ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5412"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Exécute les deux commandes l’une après l’autre</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5413"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Exécute les commandes en parallèle</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5411"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Exécute cmd2 seulement si cmd1 échoue</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5410"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Ignore cmd1</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" id="runBtn" class="btn btn-primary btn-lg mb-5 w-100 submit">Envoyer</button>
+                </form>
+            </div>
+            <div id="resultModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="resultTitle">Résultats</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body text-center lead" id="resultContent"></div>
+                        <div class="modal-footer success-actions-bar">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Réessayer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    updateLangHTML(".langvarhtml", "fr");
+                    let changed = false;
+                    $("[type=checkbox].answer").change(function() { changed = true; });
+                    function notifSave() {
+                        $("#resultContent").removeClass("bg-success bg-warning bg-danger").addClass("bg-info").text("Votre réponse a bien été sauvegardée.");
+                        $("#resultModal").modal("show");
+                    }
+                    function sendUpdate(whenDone, forced=false) {
+                        if (!changed && !forced) return;
+                        changed = false;
+                        var data = new FormData($("#form").get(0));
+                        $("[type=checkbox].answer:not(:checked)").each(function() { data.append("unchecked", $(this).val()); });
+                        $.ajax({ url: "/qcm/updateanswers/", type: "POST", data: data, processData: false, contentType: false }).done(function() { whenDone(); });
+                    }
+                    $("#form").on('submit', function(e) { e.preventDefault(); sendUpdate(notifSave, true); });
+                    function updateCB(cb) {
+                        if (cb.prop("checked")) { cb.closest(".checkbox").addClass("checked"); }
+                        else { cb.closest(".checkbox").removeClass("checked"); }
+                    }
+                    $(".checkbox").click(function() { $(this).find(".answer").click(); })
+                    $("[type=checkbox].answer").click(function(e) { updateCB($(this)); e.stopPropagation(); })
+                    $("[type=checkbox].answer").each(function() { updateCB($(this)); })
+                });
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Système : introduction Linux</title>
+        <link rel="shortcut icon" href="https://schooding-media.ams3.digitaloceanspaces.com/static/images/logo.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/schooding.css?v=1.20">
+        <script>
+            var lang = "fr";
+            console.log = function() {}
+            setInterval(function() {
+                $(".modal-backdrop").addClass("removable");
+                $(".modal-backdrop").click(function(){})
+            }, 1000);
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
+        <script type="text/javascript" src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/vendor/bootstrap-notify.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="/jsi18n/"></script>
+        <script type="text/javascript">
+            var skipVisit = true;
+            var skipSubVisit = true;
+            var getFormUrl = "/helpers/getform/";
+            var addTagUrl = "/addtag/";
+            var removeTagUrl = "/removetag/";
+            var deleteUrl = "/delete/";
+            var archiveUrl = "/archive/";
+            var shareUrl = "/give/";
+            var duplicateUrl = "/duplicate/";
+            var unarchiveUrl = "/unarchive/";
+            var addRoleUrl = "/addrole/";
+            var removeRoleUrl = "/removerole/";
+            var markMessageUrl = "/forum/message/markviewed/12345/";
+            var userId = 19023;
+            var csrfToken = "fKro8vmW0U6vyNLeePvoyPIToBKf96Rdpl6drDCvqEvt5R3ip5KOViBHa97qaTBH";
+            var notificationsUrl = "/notifs/list/12345/";
+            var mailsUrl = "/forum/maillist/12345/";
+            var notifReadUrl = "/notifs/readall/";
+            var deleteNotifsUrl = "/notifs/deleteall/";
+            var deleteNotifUrl = "/notifs/delete/12345/";
+            var showDocUrl = "/documents/show/12345/";
+            var docQuestionsListUrl = "/forum/question/list/doc/12345/";
+            var getTaskUrl = "/tasks/gettask/";
+            var getTaskProgressionUrl = "/tasks/gettaskprogression/";
+        </script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/lang.js?v=1.14"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/storage.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/common.tools.js?v=1.45"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/sidebars.js?v=1.4"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/searchfield.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/progressbar_autocolor.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/base.tour.js?v=1.0"></script>
+        <script>
+            $(document).ready(function() {
+                updateLang(".langvar", "fr")
+                updateLangHTML(".langvarhtml", "fr")
+            });
+        </script>
+        <script>
+            var exerciceId = 5743;
+            var isStudent = true;
+            var elapsedTimeAtLoad = parseInt(.0);
+            var attempts = parseInt(.0);
+            var currentProgression = parseInt(.0);
+            var inSession = false;
+            var isHomework = false;
+            var homeworkUnlocked = false;
+            var isHomeworkUnlocker = false;
+            var nextExerciceUrl = null;
+            try {
+                parent.updateProgressions(exerciceId, currentProgression);
+            } catch (error) {}
+        </script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/exercice.tools.js?v=2.06"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/documents.tools.js?v=2.22"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/chat.js?v=1.2"></script>
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/chat.css?v=1.153">
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/activity.js?v=1.35"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/qcm.tour.js?v=1.10"></script>
+        <style>
+            .checkbox.checked { background-color: #e1f8f9; }
+            .question-wording { overflow: auto; }
+        </style>
+    </head>
+    <body class="full headless">
+        <div id="mainContainer" class="main schoodiv fitToBottom">
+            <div class="page-header">
+                <h1>Système : introduction Linux</h1>
+            </div>
+            <div>
+                <form action="/qcm/validate/" method="post" id="form" class="wording">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="fKro8vmW0U6vyNLeePvoyPIToBKf96Rdpl6drDCvqEvt5R3ip5KOViBHa97qaTBH">
+                    <input type="hidden" name="qcm" value="5743">
+                    
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1332">
+                            <div class="card-header bg-info text-white">Question #1</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelle commande ouvre les pages du manuel Linux ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5289"><label class="form-check-label langvarhtml">$TR$fr info</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5290"><label class="form-check-label langvarhtml">$TR$fr manual</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5292"><label class="form-check-label langvarhtml">$TR$fr help</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5291"><label class="form-check-label langvarhtml">$TR$fr man</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1333">
+                            <div class="card-header bg-info text-white">Question #2</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelle variable représente le répertoire personnel ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5294"><label class="form-check-label langvarhtml">$TR$fr $PATH</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5295"><label class="form-check-label langvarhtml">$TR$fr $HOME</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5296"><label class="form-check-label langvarhtml">$TR$fr $ROOT</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5293"><label class="form-check-label langvarhtml">$TR$fr $SHELL</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1334">
+                            <div class="card-header bg-info text-white">Question #3</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelles affirmations concernent l’utilisateur root ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5299"><label class="form-check-label langvarhtml">$TR$fr Il est désactivé par défaut</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5303"><label class="form-check-label langvarhtml">$TR$fr Il ne peut pas utiliser sudo</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5298"><label class="form-check-label langvarhtml">$TR$fr Il n’a pas de répertoire personnel</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5297"><label class="form-check-label langvarhtml">$TR$fr Il possède tous les privilèges</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1335">
+                            <div class="card-header bg-info text-white">Question #4</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelle commande permet de changer un mot de passe ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5304"><label class="form-check-label langvarhtml">$TR$fr changepwd</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5305"><label class="form-check-label langvarhtml">$TR$fr passmod</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5307"><label class="form-check-label langvarhtml">$TR$fr pswd</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5306"><label class="form-check-label langvarhtml">$TR$fr passwd</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1337">
+                            <div class="card-header bg-info text-white">Question #5</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Dans les pages man, quelles actions sont possibles ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5310"><label class="form-check-label langvarhtml">$TR$fr Occurrence suivante (n)</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5309"><label class="form-check-label langvarhtml">$TR$fr Chercher (/)</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5311"><label class="form-check-label langvarhtml">$TR$fr Quitter (q)</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5308"><label class="form-check-label langvarhtml">$TR$fr Éditer le fichier</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1338">
+                            <div class="card-header bg-info text-white">Question #6</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Que se passe‑t‑il lors de la connexion (login) ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5314"><label class="form-check-label langvarhtml">$TR$fr MDP réinitialisé</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5315"><label class="form-check-label langvarhtml">$TR$fr Shell démarre</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5313"><label class="form-check-label langvarhtml">$TR$fr PC redémarre</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5312"><label class="form-check-label langvarhtml">$TR$fr Variables chargées</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1339">
+                            <div class="card-header bg-info text-white">Question #7</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelle(s) commande(s) permet(tent) de se déconnecter ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5318"><label class="form-check-label langvarhtml">$TR$fr quit</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5317"><label class="form-check-label langvarhtml">$TR$fr logout</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5319"><label class="form-check-label langvarhtml">$TR$fr stop</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5316"><label class="form-check-label langvarhtml">$TR$fr exit</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1340">
+                            <div class="card-header bg-info text-white">Question #8</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelles commandes affichent des informations sur l’utilisateur ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5324"><label class="form-check-label langvarhtml">$TR$fr userconf</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5320"><label class="form-check-label langvarhtml">$TR$fr id</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5322"><label class="form-check-label langvarhtml">$TR$fr whoami</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5321"><label class="form-check-label langvarhtml">$TR$fr pwd</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1341">
+                            <div class="card-header bg-info text-white">Question #9</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Quelle commande affiche une variable VAR dans un shell Linux?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5329"><label class="form-check-label langvarhtml">$TR$fr echo VAR</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5327"><label class="form-check-label langvarhtml">$TR$fr print VAR</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5328"><label class="form-check-label langvarhtml">$TR$fr show VAR</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5326"><label class="form-check-label langvarhtml">$TR$fr echo $VAR</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1342">
+                            <div class="card-header bg-info text-white">Question #10</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>Le shell Linux est…</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5330"><label class="form-check-label langvarhtml">$TR$fr A command interpreter</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5333"><label class="form-check-label langvarhtml">$TR$fr A file system</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5331"><label class="form-check-label langvarhtml">$TR$fr Virtual Machine</label></div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl"><input type="checkbox" class="answer form-check-input" name="checked" value="5332"><label class="form-check-label langvarhtml">$TR$fr A command-line interface</label></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="runBtn" class="btn btn-primary btn-lg mb-5 w-100 submit">Envoyer</button>
+                </form>
+            </div>
+            
+            <script>
+                $(document).ready(function() {
+                    function updateCB(cb) {
+                        if (cb.prop("checked")) {
+                            cb.closest(".checkbox").addClass("checked");
+                        } else {
+                            cb.closest(".checkbox").removeClass("checked");
+                        }
+                    }
+                    $(".checkbox").click(function() {
+                        $(this).find(".answer").click();
+                    })
+                    $("[type=checkbox].answer").click(function(e) {
+                        updateCB($(this));
+                        e.stopPropagation();
+                    })
+                });
+            </script>
+        </div>
+    </body>
+</html>

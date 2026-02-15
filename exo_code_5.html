@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="full" lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Système - Exercice 2 texte à trous</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .hole { 
+            display: inline; 
+            padding: 0 3px; 
+            width: 120px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .main { padding: 20px; }
+        .wording { line-height: 2; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body class="main">
+
+    <div class="page-header">
+        <h1>Système - Exercice 2 texte à trous</h1>
+        <p><i>Remplissez les trous en fonction des informations fournies.</i></p>
+    </div>
+
+    <div class="wording">
+        <p>Vous exécutez la commande <code>ls –ld ~</code>, avec le résultat suivant :</p>
+        <pre>$ ls –ld ~ 
+drwx--xr-- 34 s1 s2 4096 Feb 14 10:10 /users/s2/s1</pre>
+
+        <hr>
+
+        <form id="form">
+            <p><strong>Q1 :</strong> Quel est l’utilisateur propriétaire du répertoire s1 ?</p>
+            <p>Réponse : <input name="r1" class="hole" type="text" placeholder="..."></p>
+
+            <p><strong>Q2 :</strong> Qui peuvent changer le groupe du dossier s1 ?<br>
+            <small>(Séparer juste par un espace les utilisateurs)</small></p>
+            <p>Réponse : <input name="r2" class="hole" type="text" placeholder="..." style="width: 200px;"></p>
+
+            <p><strong>Q3 :</strong> Qui a le droit de créer un dossier bin dans le dossier s1, autre que root ?<br>
+            <small>(Séparer juste par un espace les utilisateurs)</small></p>
+            <p>Réponse : <input name="r3" class="hole" type="text" placeholder="..."></p>
+
+            <p><strong>Q4 :</strong> Quelle est la variable d'environnement qui renseigne le dossier actuel ?</p>
+            <p>Réponse : <input name="r4" class="hole" type="text" placeholder="..."></p>
+
+            <p><strong>Q5 :</strong> Donner la commande qui permet d'afficher le contenu de la variable d'environnement USER ?</p>
+            <p>Réponse : <input name="r5" class="hole" type="text" placeholder="commande"> <input name="r6" class="hole" type="text" placeholder="variable"></p>
+            
+            <button type="submit" class="btn btn-primary mt-4 w-100">Soumettre</button>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Empêcher l'envoi réel pour l'exemple
+            $("#form").on("submit", function(e) {
+                e.preventDefault();
+                alert("Réponses sauvegardées localement !");
+            });
+        });
+    </script>
+</body>
+</html>

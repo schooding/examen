@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>quizz système</title>
+        <link rel="shortcut icon" href="https://schooding-media.ams3.digitaloceanspaces.com/static/images/logo.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/schooding.css?v=1.20">
+        <script>
+            var lang = "fr";
+            console.log = function() {}
+            setInterval(function() {
+                $(".modal-backdrop").addClass("removable");
+                $(".modal-backdrop").click(function() {})
+            }, 1000);
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
+        <script type="text/javascript" src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/vendor/bootstrap-notify.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+        <script type="text/javascript" src="/jsi18n/"></script>
+        <script type="text/javascript">
+            var skipVisit = true;
+            var skipSubVisit = true;
+            var getFormUrl = "/helpers/getform/";
+            var addTagUrl = "/addtag/";
+            var removeTagUrl = "/removetag/";
+            var deleteUrl = "/delete/";
+            var archiveUrl = "/archive/";
+            var shareUrl = "/give/";
+            var duplicateUrl = "/duplicate/";
+            var unarchiveUrl = "/unarchive/";
+            var addRoleUrl = "/addrole/";
+            var removeRoleUrl = "/removerole/";
+            var markMessageUrl = "/forum/message/markviewed/12345/";
+            var userId = 19023;
+            var csrfToken = "q6mvJFzrbxLfWuoUS509f6wzK1ciNhGcAH1k2NP0BhadtyGY3lfzCzpnwzztO4qG";
+            var notificationsUrl = "/notifs/list/12345/";
+            var mailsUrl = "/forum/maillist/12345/";
+            var notifReadUrl = "/notifs/readall/";
+            var deleteNotifsUrl = "/notifs/deleteall/";
+            var deleteNotifUrl = "/notifs/delete/12345/";
+            var showDocUrl = "/documents/show/12345/";
+            var docQuestionsListUrl = "/forum/question/list/doc/12345/";
+            var getTaskUrl = "/tasks/gettask/";
+            var getTaskProgressionUrl = "/tasks/gettaskprogression/";
+        </script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/lang.js?v=1.14"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/storage.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/common.tools.js?v=1.45"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/sidebars.js?v=1.4"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/searchfield.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/progressbar_autocolor.js?v=1.1"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/base.tour.js?v=1.0"></script>
+        <script>
+            $(document).ready(function() {
+                updateLang(".langvar", "fr")
+                updateLangHTML(".langvarhtml", "fr")
+            });
+        </script>
+        <script>
+            var exerciceId = 5751;
+            var isStudent = true;
+            var elapsedTimeAtLoad = parseInt(.0);
+            var attempts = parseInt(.0);
+            var currentProgression = parseInt(.0);
+            var inSession = false;
+            var isHomework = false;
+            var homeworkUnlocked = false;
+            var isHomeworkUnlocker = false;
+            var nextExerciceUrl = null;
+            try {
+                parent.updateProgressions(exerciceId, currentProgression);
+            } catch (error) {}
+            var sendMessageUrl = "/forum/chat/studentmessage/5751/";
+            var chatHistoryUrl = "/forum/chat/history/5751/19023/12345/";
+            var askForHelpUrl = "/askforhelp/5751";
+            var updateActivityUrl = "/activities/update/";
+        </script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/exercice.tools.js?v=2.06"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/documents.tools.js?v=2.22"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/chat.js?v=1.2"></script>
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/chat.css?v=1.153">
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/activity.js?v=1.35"></script>
+        <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/qcm.tour.js?v=1.10"></script>
+        <style>
+            .checkbox.checked { background-color: #e1f8f9; }
+            .question-wording { overflow: auto; }
+        </style>
+    </head>
+    <body class="full headless">
+        <div id="mainContainer" class="main schoodiv fitToBottom">
+            <div class="page-header">
+                <h1>quizz système</h1>
+            </div>
+            <div>
+                <form action="/qcm/validate/" method="post" id="form" class="wording">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="q6mvJFzrbxLfWuoUS509f6wzK1ciNhGcAH1k2NP0BhadtyGY3lfzCzpnwzztO4qG">
+                    <input type="hidden" name="next" value="">
+                    <input type="hidden" name="qcm" value="5751">
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1363">
+                            <div class="card-header bg-info text-white">Question #1</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Quelles commandes parmi les suivantes sont des commandes Linux courantes pour la gestion des fichiers ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5414"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>cm</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5416"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>mv</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5415"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>rm</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5417"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>touc</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1364">
+                            <div class="card-header bg-info text-white">Question #2</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Le processus init a pour pid 0.</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5419"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>faux</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5418"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>vrai</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1365">
+                            <div class="card-header bg-info text-white">Question #3</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Un lien physique a le même inode que son fichier cible.</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5420"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>vrai</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5421"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>faux</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1366">
+                            <div class="card-header bg-info text-white">Question #4</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Si un fichier exécutable a les permissions suivantes 764 alors ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5424"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>Tout le monde peut lire et écrire, mais seul le propriétaire peut exécuter.</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5422"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Tout le monde peut lire, le groupe peut seulement exécuter et le propriétaire peut lire, écrire et exécuter.</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5425"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>Tout le monde peut lire, le groupe peut écrire et lire et le propriétaire peut lire, écrire et exécuter.</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5423"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>Tout le monde peut lire, uniquement le groupe et le propriétaire peuvent écrire et exécuter.</pre></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1367">
+                            <div class="card-header bg-info text-white">Question #5</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Soit la commande Linux suivante : cat f1.txt && ls ~ && date. La commande date sera exécutée si :</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5426"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>la commande cat réussit et la commande ls échoue.</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5429"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>la commande cat échoue et la commande ls réussit</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5428"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>la commande cat et ls réussissent</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5427"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>la commande cat et ls échouent</pre></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1368">
+                            <div class="card-header bg-info text-white">Question #6</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Quelle option de la commande chmod pour attribuer l'autorisation de lecture seule au propriétaire, l'autorisation de lecture/écriture au groupe et aux autres ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5432"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 555 file.txt</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5433"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 466 file.txt</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5431"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 644 file.txt</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5430"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod 777 file.txt</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1369">
+                            <div class="card-header bg-info text-white">Question #7</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Quelle commande utiliser pour associer le fichier fic.txt à l'utilisateur toto ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5434"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chmod</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5436"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chown</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5435"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chuser</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5437"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>chgrp</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1370">
+                            <div class="card-header bg-info text-white">Question #8</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Vous voulez aller dans /usr/local/linux/Quiz2, le répertoire courant est /usr/local/windows. Quelle commande ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5438"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>cd ./linux/Quiz2</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5440"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>cd ../linux/Quiz2</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5439"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>cd linux/Quiz2</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5441"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>cd ~/linux/Quiz2</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1371">
+                            <div class="card-header bg-info text-white">Question #9</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <p>VirtualBox est :</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5445"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>OS</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5442"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Hypervisor</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5444"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>operating system</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5446"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>Linux Distribution</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1372">
+                            <div class="card-header bg-info text-white">Question #10</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Dans quel fichier sont stockés les mots de passe sous Linux ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5447"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/etc/shadow</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5450"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/etc/passwords</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5448"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/etc/groups</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5449"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>/etc/passwd</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1373">
+                            <div class="card-header bg-info text-white">Question #11</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Pour créer une VM Linux avec VirtualBox, faut-il au moins 4 Go de RAM ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5452"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>vrai</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5453"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>faux</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1374">
+                            <div class="card-header bg-info text-white">Question #12</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Uniquement le super-utilisateur peut modifier le mot de passe de user1 ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5454"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>vrai</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5455"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>faux</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1375">
+                            <div class="card-header bg-info text-white">Question #13</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Lequel est un shell Linux ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5457"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>bash</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5456"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>bach</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5458"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>bath</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5459"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>batch</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1376">
+                            <div class="card-header bg-info text-white">Question #14</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Quelle commande pour rechercher tous les répertoires sous /etc ?</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5460"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>find -d /etc</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5462"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>grep -d /etc</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5463"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>ls -d /etc</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5461"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>find /etc -type d</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1377">
+                            <div class="card-header bg-info text-white">Question #15</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>Un processus est :</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5464"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>un répertoire exécutable</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5466"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>un fichier exécutable</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5465"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>un fichier avec droit x</pre></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5467"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <pre>une copie d'un exécutable en mémoire</pre></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card" data-question-id="1378">
+                            <div class="card-header bg-info text-white">Question #16</div>
+                            <div class="card-body">
+                                <div class="question-wording langvarhtml">$TR$fr <pre>inode permet d'identifier de manière unique :</pre></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5468"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>un groupe</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5469"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>un fichier</p></label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5471"/>
+                                        <label class="form-check-label langvarhtml">$TR$fr <p>un processus</p></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </form>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#form").on('submit', function(e) {
+                    e.preventDefault();
+                    alert("Formulaire soumis");
+                });
+            });
+        </script>
+    </body>
+</html>

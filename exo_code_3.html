@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title> Système - Exercice 1 texte à trous</title>
+    
+    <link rel="shortcut icon" href="https://schooding-media.ams3.digitaloceanspaces.com/static/images/logo.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-notify/0.2.0/css/bootstrap-notify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/schooding.css?v=1.20">
+
+    <script>var lang="fr";</script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote-bs4.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.12.0/js/bootstrap-tour-standalone.min.js"></script>
+    <script type="text/javascript" src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/vendor/bootstrap-notify.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/lang.js?v=1.14"></script>  
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/storage.js?v=1.1"></script>
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/common.tools.js?v=1.45"></script>
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/sidebars.js?v=1.4"></script>
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/exercice.tools.js?v=2.06"></script> 
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/documents.tools.js?v=2.22"></script> 
+    <script src="https://schooding-media.ams3.digitaloceanspaces.com/static/js/internal/documents.mdtools.js?v=1.2"></script>
+
+    <style>
+      .hole.selected{ background-color: #43fc4d!important; }
+      .changed{ border-color: brown; }
+      .saved{ border-color: rgb(71, 71, 226); }
+      select.hole.form-control{ height:2rem!important; }
+      .hole.form-control{ display: inline; padding: 0; padding-left:3px; width: 100px; }
+      input.hole[type=number] { width: 100px; }
+      input.hole[type=date] { width: 150px; }
+    </style>
+  </head>
+
+  <body class="full headless"> 
+    <div id="mainContainer" class="main schoodiv fitToBottom">
+      <div class="page-header">
+        <button class="btn btn-danger float-right" title="Réinitialiser Exercice" data-toggle="tooltip" id="resetBtn">
+          <span class="material-icons">delete</span>
+        </button>
+        <h1>Système - Exercice 1 texte à trous</h1>
+        <i>Remplissez les trous.</i>
+      </div>
+      <div>
+        <form id="form" class="page-header wording"></form>
+        <button type="submit" id="runBtn" class="btn btn-primary mb-5 mt-5 w-100 submit">Soumettre</button>
+      </div>
+
+      <div id="resultModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="resultTitle">Resultats</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body text-center lead" id="resultContent"></div>
+            <div class="modal-footer success-actions-bar">
+              <button type="button" class="btn btn-primary" id="resultBtn" data-dismiss="modal">Réessayer</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function sendChangedAnswers(func, full=false){
+        let answers = {exo_id:5752,}
+        if(full){
+          $(".hole").each((i,el)=>{ answers[$(el).attr("name")] = $(el).val() })
+        }else{  
+          $(".changed").each((i,el)=>{ answers[$(el).attr("name")] = $(el).val() })
+        }
+        $.post("/gapfill/gapanswers/update/", answers).done(function(json){
+          if(func){func()}
+          $(".changed").each((i,el)=>{
+            if(answers.hasOwnProperty($(el).attr("name"))){
+              if($(el).val() == answers[$(el).attr("name")]){
+                $(el).addClass("saved").removeClass("changed");
+              }
+            }
+          });
+        })
+      }
+
+      function refreshGap(name, type, hint, width, answer){
+        if(name=="")return;
+        if(!width)width=10;
+        width = 40+width*10;
+        let item = $("#form .hole[name="+name+"]");
+        if(type == "i") item.attr("type", "number").attr("step","1")
+        if(type == "f") item.attr("type", "number").attr("step","0.01")
+        else if(type == "F") item.attr("type", "number").attr("step","0.0001")
+        else if(type == "D") item.attr("type", "date")
+        
+        item.attr("placeholder", hint)
+        item.val(answer)
+
+        if(type=="C"){
+          let options = "<select name="+name+" class='hole'><option value='---'>---</option>";
+          $.each(hint.split("|"), function(index, o){
+            let selected = (o == answer) ? "selected" : "";
+            options += "<option value='"+o+"' "+selected+">"+o+"</option>";
+          });
+          options += "</select>";
+          item = $(options);
+        }
+
+        item.addClass("form-control")
+        item.width(width)
+        $("#form .hole[name="+name+"]").replaceWith(item);
+        
+        item.change(function(){
+          $(this).addClass("changed").removeClass("saved")
+        })
+      }
+
+      function replaceGaps() {
+        const re = /&lt;&lt;(\w*)&gt;&gt;/g
+        let input = $("#form").html().replace("\u003c\u003c","&lt;&lt;").replace("\u003e\u003e","&gt;&gt;");
+        let count=0;
+        let matches;
+        while (matches = re.exec(input)) {
+          count++;
+          input = input.replace(matches[0], '<input name="' + matches[1] + '" class="hole">');
+        }
+        if(count>0){
+          $("#form").html(input);
+          refreshGap("choix1", "S", "", 2, "")
+          refreshGap("choix2", "S", "", 2, "")
+          refreshGap("choix3", "S", "", 12, "")
+          refreshGap("choix4", "S", "", 2, "")
+          refreshGap("choix5", "S", "", 34, "")
+          refreshGap("choix6", "S", "", 5, "")
+          refreshGap("choix7", "S", "", 16, "")
+        }
+        return count;
+      }
+
+      function timedReplaceGaps(){
+        setTimeout(function () {
+          let count = replaceGaps();
+          if(count == 0) timedReplaceGaps();
+        }, 50)
+      }
+
+      function updateRenderAndGaps() {
+        md_update("\u000A\u000A# Exercice 1\u000A\u000ASoit le résultat de l\u0027éxécution des commandes id et pwd sous Linux :\u000A\u000A$ id\u000A\u000Auid\u003D1002(s1) gid\u003D1010(s2) groups\u003D1010(s2),24(cdrom)\u000A\u000A$ pwd \u000A\u000A/users/s2/s1 \u000A\u000AQ1 : Quel est votre nom d’utilisateur ? \u000A\u000ARéponse : \u003C\u003Cchoix1\u003E\u003E\u000A\u000AQ2 : Quel est celui du groupe auquel vous appartenez ? \u000A\u000ARéponse : \u003C\u003Cchoix2\u003E\u003E\u000A\u000AQ3 : Quel est le nom complet du dossier contenant votre répertoire personnel ?\u000A\u000ARéponse :  \u003C\u003Cchoix3\u003E\u003E \u000A\u000AQ4:  Donnez la commande Linux pour afficher les scripts d\u0027extension bash se trouvant dans le répertoire Telechargements qui appartient à votre dossier personnel ? \u000AVous devez donner le chemin absolu. (bien distinguer le nom de la commande et le chemin)\u000ARéponse : \u003C\u003Cchoix4\u003E\u003E  \u003C\u003Cchoix5\u003E\u003E  \u000A\u000AQ5 :  Donner la commande pour créer un dossier bin placé dans votre répertoire personnel ?\u000ADonner la commande avec un chemin absolu. (bien distinguer le nom de la commande et le chemin)\u000A\u000ARéponse : \u003C\u003Cchoix6\u003E\u003E \u003C\u003Cchoix7\u003E\u003E  ", "form");
+        timedReplaceGaps();
+      }
+
+      $(document).ready(function() {
+        updateRenderAndGaps();
+
+        $("#resetBtn").click(function () {
+          if(confirm("Réinitialiser cet exercice ?")){
+            location.reload();
+          }
+        });
+
+        $("#runBtn").on('click', function(e) {
+          e.preventDefault(); 
+          sendChangedAnswers(()=>{
+            $("#resultTitle").text("Sauvegarde");
+            $("#resultContent").addClass("bg-info").text("Votre réponse a bien été sauvegardée.");
+            $("#resultModal").modal("show");
+          }, true);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html class="full" lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Système : Fichiers, permissions, processus</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://schooding-media.ams3.digitaloceanspaces.com/static/css/schooding.css?v=1.20">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            .checkbox.checked { background-color: #e1f8f9; }
+            .question-wording { overflow: auto; }
+            .wording { user-select: none; }
+        </style>
+    </head>
+    <body class="full headless">
+        <div id="mainContainer" class="main schoodiv fitToBottom">
+            <div class="page-header">
+                <h1>Système : Fichiers, permissions, processus</h1>
+            </div>
+            <div>
+                <form action="/qcm/validate/" method="post" id="form" class="wording">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="ifJpqu7KwpgdnPgYSEVkL83ylHpNSMSQsQoeJCnjW9FbUTy23UaK8BWm7fMYTzCk">
+                    <input type="hidden" name="qcm" value="5744">
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #1</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quels sont des droits Unix standards ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5335">
+                                        <label class="form-check-label">Exécution</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5336">
+                                        <label class="form-check-label">Compression</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5337">
+                                        <label class="form-check-label">Masquage</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5334">
+                                        <label class="form-check-label">Lecture</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #2</div>
+                            <div class="card-body">
+                                <div class="question-wording"><h3>Que permet le sticky bit sur un répertoire ?</h3></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5341">
+                                        <label class="form-check-label">Empêcher la suppression de son contenu par un autre utilisateur autre que son propriétaire</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5340">
+                                        <label class="form-check-label">Rendre le dossier exécutable</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #3</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quel symbole désigne un répertoire avec ls -l ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5342">
+                                        <label class="form-check-label">d</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5345">
+                                        <label class="form-check-label">-</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #4</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quelle commande affiche l’inode ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5347">
+                                        <label class="form-check-label">ls -i</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #5</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Que signifie PPID sur un processus ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5352">
+                                        <label class="form-check-label">Parent PID</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #6</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quelle(s) commande(s) affiche(nt) des processus actifs ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5357">
+                                        <label class="form-check-label">top</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5354">
+                                        <label class="form-check-label">ps</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #7</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quels sont des états possibles d’un processus</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5358">
+                                        <label class="form-check-label">Zombie (Z)</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5359">
+                                        <label class="form-check-label">Running (R)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #8</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quelle(s) commande(s) tue(nt) un processus ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5363">
+                                        <label class="form-check-label">killall</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5362">
+                                        <label class="form-check-label">kill</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #9</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quel outil affiche l’arbre des processus ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5368">
+                                        <label class="form-check-label">pstree</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="card card-info question-card">
+                            <div class="card-header bg-info text-white">Question #10</div>
+                            <div class="card-body">
+                                <div class="question-wording"><p>Quels éditeurs de texte sont utilisés sous Unix ?</p></div>
+                                <div class="list-group bg-white answers-list">
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5373">
+                                        <label class="form-check-label">vi</label>
+                                    </div>
+                                    <div class="list-group-item checkbox form-check checkbox-xl">
+                                        <input type="checkbox" class="answer form-check-input" name="checked" value="5371">
+                                        <label class="form-check-label">nano</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="runBtn" class="btn btn-primary btn-lg mb-5 w-100 submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                function updateCB(cb) {
+                    if (cb.prop("checked")) {
+                        cb.closest(".checkbox").addClass("checked");
+                    } else {
+                        cb.closest(".checkbox").removeClass("checked");
+                    }
+                }
+
+                $(".checkbox").click(function() {
+                    $(this).find(".answer").click();
+                });
+
+                $("[type=checkbox].answer").click(function(e) {
+                    updateCB($(this));
+                    e.stopPropagation();
+                });
+
+                $("[type=checkbox].answer").each(function() {
+                    updateCB($(this));
+                });
+            });
+        </script>
+    </body>
+</html>
