@@ -60,13 +60,7 @@
     // === 4. LOGIQUES DE COULEUR (SOURCES OFFICIELLES) ===
     
     // Fonction quadratique extraite de progressbar_autocolor.js [cite: 1, 2, 3]
-    function hsl_col_perc(percent, start, end, s, l) {
-        if (percent > 100) percent = 100;
-        let a = percent / 100,
-            b = (end - start) * a * a, // Courbe Schooding 
-            c = b + start;
-        return `hsl(${c}, ${s}%, ${l}%)`;
-    }
+    
 
     function render() {
         const now = Date.now();
@@ -107,3 +101,4 @@
 
     render();
 })();
+
