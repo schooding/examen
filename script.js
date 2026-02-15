@@ -87,7 +87,14 @@
         }
 
         // B. Couleur du Chrono (Vert -> Rouge selon progression) [cite: 1]
-       
+        if (countdownElement) {
+            countdownElement.style.color = "white";
+            
+            let hours = Math.floor(remaining / 3600);
+            let mins = Math.floor((remaining % 3600) / 60);
+            let secs = remaining % 60;
+            countdownElement.innerText = `${hours}h ${mins.toString().padStart(2, '0')}m ${secs.toString().padStart(2, '0')}s`;
+        }
 
         if (diff > 0) {
             requestAnimationFrame(render);
